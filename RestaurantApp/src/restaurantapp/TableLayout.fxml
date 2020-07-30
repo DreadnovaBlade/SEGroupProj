@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="AnchorPane1" stylesheets="@TableLayoutStyle.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurantapp.TableLayoutController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1280.0" layoutX="1.0" pickOnBounds="true" styleClass="background">
+         <image>
+            <Image url="@ImageAssets/RestaurantBackground.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="userdisplay" alignment="CENTER" layoutX="90.0" layoutY="54.0" prefHeight="23.0" prefWidth="94.0" textFill="#ffd400">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="logOut" layoutX="1119.0" layoutY="52.0" mnemonicParsing="false" onAction="#logOutB" prefHeight="27.0" prefWidth="80.0" text="Log Out" />
+      <TabPane fx:id="tableOnePane" layoutX="90.0" layoutY="97.0" prefHeight="300.0" prefWidth="500.0" side="BOTTOM" stylesheets="@TableLayoutStyle.css" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tableOneTab" text="Table 1">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <Button fx:id="tableOneSeatOne" layoutX="10.0" layoutY="10.0" lineSpacing="0.5" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat One" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <TextArea fx:id="tableOneSeatOneOrder" editable="false" layoutX="10.0" layoutY="37.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableOneSeatTwo" layoutX="270.0" layoutY="10.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Two" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <TextArea fx:id="tableOneSeatTwoOrder" editable="false" layoutX="270.0" layoutY="37.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableOneSeatThree" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Three">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <TextArea fx:id="tableOneSeatThreeOrder" editable="false" layoutX="10.0" layoutY="165.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableOneSeatFour" layoutX="270.0" layoutY="138.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Four" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <TextArea fx:id="tableOneSeatFourOrder" editable="false" layoutX="270.0" layoutY="165.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Circle fx:id="tableOneStatus" fill="LIME" layoutX="250.0" layoutY="245.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tableOnePreviewTab" text="Preview">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <TextArea fx:id="tableOnePreviewOrder" editable="false" layoutX="15.0" layoutY="48.0" prefHeight="175.0" prefWidth="470.0" />
+                        <Button fx:id="tableOnePreviewButton" layoutX="161.0" layoutY="14.0" mnemonicParsing="false" onAction="#previewOrder" prefHeight="25.0" prefWidth="179.0" text="Preview Order" />
+                        <Button fx:id="tableOneSubmitButton" layoutX="50.0" layoutY="232.0" mnemonicParsing="false" onAction="#submitOrder" prefHeight="25.0" prefWidth="179.0" text="Submit Order" />
+                        <Label fx:id="tableOneSubmitLabel" alignment="CENTER" layoutX="265.0" layoutY="231.0" prefHeight="17.0" prefWidth="182.0" text="Order Submitted!" textFill="#00ff6d" visible="false">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tableOnePaymentTab" disable="true" text="Payment">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <TextField fx:id="tableOneTotalPrice" editable="false" layoutX="287.0" layoutY="230.0" prefHeight="16.0" prefWidth="199.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="tableOneCashButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paymentProcessing" prefHeight="25.0" prefWidth="200.0" text="Cash" />
+                        <AnchorPane fx:id="tableOneCashPane" layoutX="14.0" layoutY="47.0" prefHeight="176.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextField alignment="CENTER" editable="false" layoutX="28.0" layoutY="64.0" prefHeight="27.0" prefWidth="137.0" text="How many payees?" />
+                              <TextArea fx:id="tableOnePeoplePaying" layoutX="173.0" layoutY="57.0" prefHeight="0.0" prefWidth="47.0" />
+                              <Button fx:id="tableOneCalcButton" layoutX="89.0" layoutY="109.0" mnemonicParsing="false" onAction="#calcSplitBill" text="Calculate" />
+                              <TextArea fx:id="tableOneCostPer" editable="false" layoutX="253.0" layoutY="77.0" prefHeight="29.0" prefWidth="210.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="tableOneCardButton" layoutX="286.0" layoutY="14.0" mnemonicParsing="false" onAction="#paymentProcessing" prefHeight="25.0" prefWidth="200.0" text="Credit Card" />
+                        <AnchorPane fx:id="tableOneCardPane" layoutX="14.0" layoutY="47.0" prefHeight="184.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextArea fx:id="tableOnePIN" layoutX="206.0" layoutY="78.0" prefHeight="29.0" prefWidth="61.0" promptText="PIN" />
+                              <Label layoutX="14.0" layoutY="45.0" prefHeight="27.0" prefWidth="445.0" text="Please insert your card into the card reader and enter your PIN below:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="tableOneFinaliseButton" layoutX="14.0" layoutY="231.0" mnemonicParsing="false" onAction="#finishPayment" prefHeight="27.0" prefWidth="129.0" text="Finalise Payment" />
+                        <CheckBox fx:id="tableOneStudDisc" layoutX="161.0" layoutY="235.0" mnemonicParsing="false" onAction="#studentDiscOne" text="Student Disc." />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TabPane fx:id="tableTwoPane" layoutX="699.0" layoutY="97.0" prefHeight="300.0" prefWidth="500.0" side="BOTTOM" stylesheets="@TableLayoutStyle.css" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tableTwoTab" text="Table 2">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <Button fx:id="tableTwoSeatOne" layoutX="10.0" layoutY="10.0" lineSpacing="0.5" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat One" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableTwoSeatOneOrder" editable="false" layoutX="10.0" layoutY="37.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableTwoSeatTwo" layoutX="270.0" layoutY="10.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Two" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableTwoSeatTwoOrder" editable="false" layoutX="270.0" layoutY="37.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableTwoSeatThree" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Three">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableTwoSeatThreeOrder" editable="false" layoutX="10.0" layoutY="165.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableTwoSeatFour" layoutX="270.0" layoutY="138.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Four" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableTwoSeatFourOrder" editable="false" layoutX="270.0" layoutY="165.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Circle fx:id="tableTwoStatus" fill="LIME" layoutX="250.0" layoutY="245.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tableTwoPreviewTab" text="Preview">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <TextArea fx:id="tableTwoPreviewOrder" editable="false" layoutX="15.0" layoutY="48.0" prefHeight="175.0" prefWidth="470.0" />
+                        <Button fx:id="tableTwoPreviewButton" layoutX="161.0" layoutY="14.0" mnemonicParsing="false" onAction="#previewOrder" prefHeight="25.0" prefWidth="179.0" text="Preview Order" />
+                        <Button fx:id="tableTwoSubmitButton" layoutX="50.0" layoutY="232.0" mnemonicParsing="false" onAction="#submitOrder" prefHeight="25.0" prefWidth="179.0" text="Submit Order" />
+                        <Label fx:id="tableTwoSubmitLabel" alignment="CENTER" layoutX="265.0" layoutY="231.0" prefHeight="17.0" prefWidth="182.0" text="Order Submitted!" textFill="#00ff6d" visible="false">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tableTwoPaymentTab" disable="true" text="Payment">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <TextField fx:id="tableTwoTotalPrice" editable="false" layoutX="287.0" layoutY="230.0" prefHeight="16.0" prefWidth="199.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="tableTwoCashButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paymentProcessing" prefHeight="25.0" prefWidth="200.0" text="Cash" />
+                        <AnchorPane fx:id="tableTwoCashPane" layoutX="14.0" layoutY="47.0" prefHeight="176.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextField alignment="CENTER" editable="false" layoutX="43.0" layoutY="58.0" prefHeight="26.0" prefWidth="117.0" text="How many payees?" />
+                              <TextArea fx:id="tableTwoPeoplePaying" layoutX="160.0" layoutY="58.0" prefHeight="26.0" prefWidth="35.0" />
+                              <Button fx:id="tableTwoCalcButton" layoutX="86.0" layoutY="93.0" mnemonicParsing="false" onAction="#calcSplitBill" text="Calculate" />
+                              <TextArea fx:id="tableTwoCostPer" editable="false" layoutX="219.0" layoutY="71.0" prefHeight="45.0" prefWidth="210.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="tableTwoCardButton" layoutX="286.0" layoutY="14.0" mnemonicParsing="false" onAction="#paymentProcessing" prefHeight="25.0" prefWidth="200.0" text="Credit Card" />
+                        <AnchorPane fx:id="tableTwoCardPane" layoutX="14.0" layoutY="47.0" prefHeight="184.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextArea fx:id="tableTwoPIN" layoutX="206.0" layoutY="78.0" prefHeight="29.0" prefWidth="61.0" promptText="PIN" />
+                              <Label layoutX="14.0" layoutY="45.0" prefHeight="27.0" prefWidth="445.0" text="Please insert your card into the card reader and enter your PIN below:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="tableTwoFinaliseButton" layoutX="14.0" layoutY="232.0" mnemonicParsing="false" onAction="#finishPayment" prefHeight="27.0" prefWidth="132.0" text="Finalise Payment" />
+                        <CheckBox fx:id="tableTwoStudDisc" layoutX="161.0" layoutY="237.0" mnemonicParsing="false" onAction="#studentDiscTwo" text="Student Disc." />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TabPane fx:id="tableThreePane" layoutX="90.0" layoutY="450.0" prefHeight="300.0" prefWidth="500.0" side="BOTTOM" stylesheets="@TableLayoutStyle.css" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tableThreeTab" text="Table 3">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <Button fx:id="tableThreeSeatOne" layoutX="10.0" layoutY="10.0" lineSpacing="0.5" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat One" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableThreeSeatOneOrder" editable="false" layoutX="10.0" layoutY="37.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableThreeSeatTwo" layoutX="270.0" layoutY="10.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Two" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableThreeSeatTwoOrder" editable="false" layoutX="270.0" layoutY="37.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableThreeSeatThree" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Three">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableThreeSeatThreeOrder" editable="false" layoutX="10.0" layoutY="165.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableThreeSeatFour" layoutX="270.0" layoutY="138.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Four" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableThreeSeatFourOrder" editable="false" layoutX="270.0" layoutY="165.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Circle fx:id="tableThreeStatus" fill="LIME" layoutX="250.0" layoutY="245.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tableThreePreviewTab" text="Preview">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <TextArea fx:id="tableThreePreviewOrder" editable="false" layoutX="15.0" layoutY="48.0" prefHeight="175.0" prefWidth="470.0" />
+                        <Button fx:id="tableThreePreviewButton" layoutX="161.0" layoutY="14.0" mnemonicParsing="false" onAction="#previewOrder" prefHeight="25.0" prefWidth="179.0" text="Preview Order" />
+                        <Button fx:id="tableThreeSubmitButton" layoutX="50.0" layoutY="232.0" mnemonicParsing="false" onAction="#submitOrder" prefHeight="25.0" prefWidth="179.0" text="Submit Order" />
+                        <Label fx:id="tableThreeSubmitLabel" alignment="CENTER" layoutX="265.0" layoutY="231.0" prefHeight="17.0" prefWidth="182.0" text="Order Submitted!" textFill="#00ff6d" visible="false">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tableThreePaymentTab" disable="true" text="Payment">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <TextField fx:id="tableThreeTotalPrice" editable="false" layoutX="287.0" layoutY="230.0" prefHeight="16.0" prefWidth="199.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="tableThreeCashButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paymentProcessing" prefHeight="25.0" prefWidth="200.0" text="Cash" />
+                        <AnchorPane fx:id="tableThreeCashPane" layoutX="14.0" layoutY="47.0" prefHeight="176.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextField alignment="CENTER" editable="false" layoutX="43.0" layoutY="58.0" prefHeight="26.0" prefWidth="117.0" text="How many payees?" />
+                              <TextArea fx:id="tableThreePeoplePaying" layoutX="160.0" layoutY="58.0" prefHeight="26.0" prefWidth="35.0" />
+                              <Button fx:id="tableThreeCalcButton" layoutX="86.0" layoutY="93.0" mnemonicParsing="false" onAction="#calcSplitBill" text="Calculate" />
+                              <TextArea fx:id="tableThreeCostPer" editable="false" layoutX="219.0" layoutY="71.0" prefHeight="45.0" prefWidth="210.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="tableThreeCardButton" layoutX="286.0" layoutY="14.0" mnemonicParsing="false" onAction="#paymentProcessing" prefHeight="25.0" prefWidth="200.0" text="Credit Card" />
+                        <AnchorPane fx:id="tableThreeCardPane" layoutX="14.0" layoutY="47.0" prefHeight="184.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextArea fx:id="tableThreePIN" layoutX="206.0" layoutY="78.0" prefHeight="29.0" prefWidth="61.0" promptText="PIN" />
+                              <Label layoutX="14.0" layoutY="45.0" prefHeight="27.0" prefWidth="445.0" text="Please insert your card into the card reader and enter your PIN below:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="tableThreeFinaliseButton" layoutX="14.0" layoutY="232.0" mnemonicParsing="false" onAction="#finishPayment" prefHeight="27.0" prefWidth="131.0" text="Finalise Payment" />
+                        <CheckBox fx:id="tableThreeStudDisc" layoutX="161.0" layoutY="237.0" mnemonicParsing="false" onAction="#studentDiscThree" text="Student Disc." />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TabPane fx:id="tableFourPane" layoutX="699.0" layoutY="450.0" prefHeight="300.0" prefWidth="500.0" side="BOTTOM" stylesheets="@TableLayoutStyle.css" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tableFourTab" text="Table 4">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <Button fx:id="tableFourSeatOne" layoutX="10.0" layoutY="10.0" lineSpacing="0.5" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat One" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableFourSeatOneOrder" editable="false" layoutX="10.0" layoutY="37.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableFourSeatTwo" layoutX="270.0" layoutY="10.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Two" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableFourSeatTwoOrder" editable="false" layoutX="270.0" layoutY="37.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableFourSeatThree" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Three">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableFourSeatThreeOrder" editable="false" layoutX="10.0" layoutY="165.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Button fx:id="tableFourSeatFour" layoutX="270.0" layoutY="138.0" mnemonicParsing="false" onAction="#takeSeatOrder" prefHeight="25.0" prefWidth="220.0" styleClass="buttons" text="Seat Four" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="tableFourSeatFourOrder" editable="false" layoutX="270.0" layoutY="165.0" prefHeight="95.0" prefWidth="220.0" />
+                        <Circle fx:id="tableFourStatus" fill="LIME" layoutX="250.0" layoutY="245.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tableFourPreviewTab" text="Preview">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <TextArea fx:id="tableFourPreviewOrder" editable="false" layoutX="15.0" layoutY="48.0" prefHeight="175.0" prefWidth="470.0" />
+                        <Button fx:id="tableFourPreviewButton" layoutX="161.0" layoutY="14.0" mnemonicParsing="false" onAction="#previewOrder" prefHeight="25.0" prefWidth="179.0" text="Preview Order" />
+                        <Button fx:id="tableFourSubmitButton" layoutX="50.0" layoutY="232.0" mnemonicParsing="false" onAction="#submitOrder" prefHeight="25.0" prefWidth="179.0" text="Submit Order" />
+                        <Label fx:id="tableFourSubmitLabel" alignment="CENTER" layoutX="265.0" layoutY="231.0" prefHeight="17.0" prefWidth="182.0" text="Order Submitted!" textFill="#00ff6d" visible="false">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tableFourPaymentTab" disable="true" text="Payment">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="270.0" stroke="#796e6e" strokeType="INSIDE" styleClass="TableStyle" width="500.0" />
+                        <TextField fx:id="tableFourTotalPrice" editable="false" layoutX="287.0" layoutY="230.0" prefHeight="16.0" prefWidth="199.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="tableFourCashButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paymentProcessing" prefHeight="25.0" prefWidth="200.0" text="Cash" />
+                        <AnchorPane fx:id="tableFourCashPane" layoutX="14.0" layoutY="47.0" prefHeight="176.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextField alignment="CENTER" editable="false" layoutX="43.0" layoutY="58.0" prefHeight="26.0" prefWidth="117.0" text="How many payees?" />
+                              <TextArea fx:id="tableFourPeoplePaying" layoutX="160.0" layoutY="58.0" prefHeight="26.0" prefWidth="35.0" />
+                              <Button fx:id="tableFourCalcButton" layoutX="86.0" layoutY="93.0" mnemonicParsing="false" onAction="#calcSplitBill" text="Calculate" />
+                              <TextArea fx:id="tableFourCostPer" editable="false" layoutX="219.0" layoutY="71.0" prefHeight="45.0" prefWidth="210.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="tableFourCardButton" layoutX="286.0" layoutY="14.0" mnemonicParsing="false" onAction="#paymentProcessing" prefHeight="25.0" prefWidth="200.0" text="Credit Card" />
+                        <AnchorPane fx:id="tableFourCardPane" layoutX="14.0" layoutY="47.0" prefHeight="184.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextArea fx:id="tableFourPIN" layoutX="206.0" layoutY="78.0" prefHeight="29.0" prefWidth="61.0" promptText="PIN" />
+                              <Label layoutX="14.0" layoutY="45.0" prefHeight="27.0" prefWidth="445.0" text="Please insert your card into the card reader and enter your PIN below:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="tableFourFinaliseButton" layoutX="14.0" layoutY="232.0" mnemonicParsing="false" onAction="#finishPayment" prefHeight="27.0" prefWidth="139.0" text="Finalise Payment" />
+                        <CheckBox fx:id="tableFourStudDisc" layoutX="168.0" layoutY="237.0" mnemonicParsing="false" onAction="#studentDiscFour" text="Student Disc." />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <MenuBar prefHeight="29.0" prefWidth="1280.0" styleClass="MenuStyle" stylesheets="@TableLayoutStyle.css" AnchorPane.bottomAnchor="771.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Find Tables">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#findAvailTable" text="Find..." />
+                  <MenuItem mnemonicParsing="false" onAction="#resetFind" text="Reset View" />
+            </items>
+          </Menu>
+          <Menu fx:id="statReports" mnemonicParsing="false" text="Statistical Reports">
+            <items>
+              <MenuItem fx:id="viewReports" mnemonicParsing="false" onAction="#viewStatReports" text="View Reports" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help &amp; Troubleshooting">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#userManualButton" text="User Manual" />
+            </items>
+          </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <padding>
+            <Insets left="420.0" />
+         </padding>
+      </MenuBar>
+      <Button layoutX="996.0" layoutY="52.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="27.0" prefWidth="118.0" text="Register Waiter" />
+      <AnchorPane id="AnchorPane" fx:id="menuScreenPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8594a1" height="800.0" opacity="0.8" stroke="#00000049" strokeType="INSIDE" styleClass="FloatMenu" width="640.0" />
+            <Button fx:id="starterMenu" layoutX="70.0" layoutY="100.0" mnemonicParsing="false" onAction="#showMenuItems" prefHeight="75.0" prefWidth="500.0" text="Starters">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="mainCourseMenu" layoutX="70.0" layoutY="275.0" mnemonicParsing="false" onAction="#showMenuItems" prefHeight="75.0" prefWidth="500.0" text="Main Courses">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="drinkMenu" layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#showMenuItems" prefHeight="75.0" prefWidth="500.0" text="Drinks">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="dessertMenu" layoutX="70.0" layoutY="625.0" mnemonicParsing="false" onAction="#showMenuItems" prefHeight="75.0" prefWidth="500.0" text="Desserts">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <ScrollPane fx:id="menuItemPane" layoutX="640.0" prefHeight="800.0" prefWidth="640.0">
+               <content>
+                  <AnchorPane fx:id="menuViewPane" minHeight="0.0" minWidth="0.0" prefHeight="807.0" prefWidth="628.0">
+                     <children>
+                        <TableView fx:id="menuTable" prefHeight="400.0" prefWidth="640.0">
+                           <columns>
+                              <TableColumn fx:id="itemNameCol" prefWidth="129.0" resizable="false" text="Item Name" />
+                              <TableColumn fx:id="descCol" minWidth="0.0" prefWidth="420.0" resizable="false" text="Description" />
+                              <TableColumn fx:id="priceCol" prefWidth="90.0" resizable="false" text="Price (£)" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="addToOrder" layoutY="402.0" mnemonicParsing="false" onAction="#addItemToOrder" prefHeight="25.0" prefWidth="640.0" text="Add Menu Item to Order" />
+                        <Button fx:id="finishOrder" layoutY="430.0" mnemonicParsing="false" onAction="#finishOrder" prefHeight="25.0" prefWidth="640.0" text="Finish Order" />
+                        <Button fx:id="resetOrder" layoutY="458.0" mnemonicParsing="false" onAction="#resetOrder" prefHeight="25.0" prefWidth="640.0" text="Reset Current Order" />
+                        <TextArea fx:id="currentOrderText" layoutX="162.0" layoutY="549.0" prefHeight="200.0" prefWidth="316.0" />
+                        <Label layoutX="282.0" layoutY="527.0" text="Current Order:" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="statPane" layoutX="445.0" layoutY="80.0" prefHeight="670.0" prefWidth="391.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="670.0" stroke="BLACK" strokeType="INSIDE" width="417.0" />
+            <TextArea fx:id="reportViewBox" layoutX="7.0" layoutY="7.0" prefHeight="609.0" prefWidth="403.0" />
+            <Button layoutX="7.0" layoutY="626.0" mnemonicParsing="false" onAction="#closeStatReports" prefHeight="36.0" prefWidth="403.0" text="Close Reports" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

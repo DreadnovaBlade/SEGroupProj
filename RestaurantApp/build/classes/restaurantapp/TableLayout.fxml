@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurantapp.TableLayoutController">
+   <children>
+      <TabPane fx:id="tableTabPane2" layoutX="121.0" layoutY="62.0" prefHeight="254.0" prefWidth="398.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tableTab2" text="Table View">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="tableOne" contentDisplay="GRAPHIC_ONLY" layoutX="3.0" layoutY="5.0" mnemonicParsing="false" prefHeight="214.0" prefWidth="389.0" text="Button" />
+                        <Circle fx:id="tableTwoStatus2" fill="LIME" layoutX="372.0" layoutY="199.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Seat View">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat One" />
+                        <TextArea layoutX="14.0" layoutY="29.0" prefHeight="81.0" prefWidth="165.0" />
+                        <Button layoutX="218.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Two" />
+                        <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Three" />
+                        <Button layoutX="219.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Four" />
+                        <TextArea layoutX="218.0" layoutY="29.0" prefHeight="81.0" prefWidth="165.0" />
+                        <TextArea layoutX="14.0" layoutY="140.0" prefHeight="81.0" prefWidth="165.0" />
+                        <TextArea layoutX="219.0" layoutY="140.0" prefHeight="81.0" prefWidth="165.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Options">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <MenuButton layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Table Status">
+                           <items>
+                              <MenuItem fx:id="available2" mnemonicParsing="false" onAction="#tableSetAvail" text="Available" />
+                              <MenuItem fx:id="pendingorder2" mnemonicParsing="false" onAction="#tableSetPending" text="Pending Order" />
+                              <MenuItem fx:id="unavailable2" mnemonicParsing="false" onAction="#tableSetUnavail" text="Unavailable" />
+                           </items>
+                        </MenuButton>
+                        <Button layoutX="108.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Preview Order" />
+                        <TextArea layoutX="10.0" layoutY="87.0" prefHeight="131.0" prefWidth="378.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TabPane fx:id="tableTabPane" layoutX="761.0" layoutY="62.0" prefHeight="254.0" prefWidth="398.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tableTab" text="Table View">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="tableTwo" contentDisplay="GRAPHIC_ONLY" layoutX="3.0" layoutY="5.0" mnemonicParsing="false" prefHeight="214.0" prefWidth="389.0" text="Button" />
+                        <Circle fx:id="tableTwoStatus" fill="LIME" layoutX="372.0" layoutY="199.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Seat View">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat One" />
+                        <TextArea layoutX="14.0" layoutY="29.0" prefHeight="81.0" prefWidth="165.0" />
+                        <Button layoutX="218.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Two" />
+                        <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Three" />
+                        <Button layoutX="219.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Four" />
+                        <TextArea layoutX="218.0" layoutY="29.0" prefHeight="81.0" prefWidth="165.0" />
+                        <TextArea layoutX="14.0" layoutY="140.0" prefHeight="81.0" prefWidth="165.0" />
+                        <TextArea layoutX="219.0" layoutY="140.0" prefHeight="81.0" prefWidth="165.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Options">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <MenuButton layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Table Status">
+                          <items>
+                            <MenuItem fx:id="available" mnemonicParsing="false" onAction="#tableSetAvail" text="Available" />
+                            <MenuItem fx:id="pendingorder" mnemonicParsing="false" onAction="#tableSetPending" text="Pending Order" />
+                              <MenuItem fx:id="unavailable" mnemonicParsing="false" onAction="#tableSetUnavail" text="Unavailable" />
+                          </items>
+                        </MenuButton>
+                        <Button layoutX="108.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Preview Order" />
+                        <TextArea layoutX="10.0" layoutY="87.0" prefHeight="131.0" prefWidth="378.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <TabPane fx:id="tableTabPane21" layoutX="121.0" layoutY="473.0" prefHeight="254.0" prefWidth="398.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tableTab21" text="Table View">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="tableThree" contentDisplay="GRAPHIC_ONLY" layoutX="3.0" layoutY="5.0" mnemonicParsing="false" onAction="#aaaaaaaa" prefHeight="214.0" prefWidth="389.0" text="Button" />
+                        <Circle fx:id="tableTwoStatus21" fill="LIME" layoutX="372.0" layoutY="199.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Seat View">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat One" />
+                        <TextArea layoutX="14.0" layoutY="29.0" prefHeight="81.0" prefWidth="165.0" />
+                        <Button layoutX="218.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Two" />
+                        <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Three" />
+                        <Button layoutX="219.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Four" />
+                        <TextArea layoutX="218.0" layoutY="29.0" prefHeight="81.0" prefWidth="165.0" />
+                        <TextArea layoutX="14.0" layoutY="140.0" prefHeight="81.0" prefWidth="165.0" />
+                        <TextArea layoutX="219.0" layoutY="140.0" prefHeight="81.0" prefWidth="165.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Options">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <MenuButton layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Table Status">
+                           <items>
+                              <MenuItem fx:id="available21" mnemonicParsing="false" onAction="#tableSetAvail" text="Available" />
+                              <MenuItem fx:id="pendingorder21" mnemonicParsing="false" onAction="#tableSetPending" text="Pending Order" />
+                              <MenuItem fx:id="unavailable21" mnemonicParsing="false" onAction="#tableSetUnavail" text="Unavailable" />
+                           </items>
+                        </MenuButton>
+                        <Button layoutX="108.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Preview Order" />
+                        <TextArea layoutX="10.0" layoutY="87.0" prefHeight="131.0" prefWidth="378.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TabPane fx:id="tableTabPane1" layoutX="761.0" layoutY="473.0" prefHeight="254.0" prefWidth="398.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tableTab1" text="Table View">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="tableFour" contentDisplay="GRAPHIC_ONLY" layoutX="3.0" layoutY="5.0" mnemonicParsing="false" prefHeight="214.0" prefWidth="389.0" text="Button" />
+                        <Circle fx:id="tableTwoStatus1" fill="LIME" layoutX="372.0" layoutY="199.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Seat View">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat One" />
+                        <TextArea layoutX="14.0" layoutY="29.0" prefHeight="81.0" prefWidth="165.0" />
+                        <Button layoutX="218.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Two" />
+                        <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Three" />
+                        <Button layoutX="219.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Seat Four" />
+                        <TextArea layoutX="218.0" layoutY="29.0" prefHeight="81.0" prefWidth="165.0" />
+                        <TextArea layoutX="14.0" layoutY="140.0" prefHeight="81.0" prefWidth="165.0" />
+                        <TextArea layoutX="219.0" layoutY="140.0" prefHeight="81.0" prefWidth="165.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Options">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <MenuButton layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Table Status">
+                           <items>
+                              <MenuItem fx:id="available1" mnemonicParsing="false" onAction="#tableSetAvail" text="Available" />
+                              <MenuItem fx:id="pendingorder1" mnemonicParsing="false" onAction="#tableSetPending" text="Pending Order" />
+                              <MenuItem fx:id="unavailable1" mnemonicParsing="false" onAction="#tableSetUnavail" text="Unavailable" />
+                           </items>
+                        </MenuButton>
+                        <Button layoutX="108.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Preview Order" />
+                        <TextArea layoutX="10.0" layoutY="87.0" prefHeight="131.0" prefWidth="378.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="restaurantapp.MenuLayoutController">
+   <children>
+      <Button fx:id="starterMenu" layoutX="70.0" layoutY="100.0" mnemonicParsing="false" onAction="#showStarters" prefHeight="75.0" prefWidth="500.0" text="Starters">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="mainCourseMenu" layoutX="70.0" layoutY="275.0" mnemonicParsing="false" onAction="#showMains" prefHeight="75.0" prefWidth="500.0" text="Main Courses">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="drinkMenu" layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#showDrinks" prefHeight="75.0" prefWidth="500.0" text="Drinks">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="dessertMenu" layoutX="70.0" layoutY="625.0" mnemonicParsing="false" onAction="#showDesserts" prefHeight="75.0" prefWidth="500.0" text="Desserts">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <ScrollPane fx:id="starterSPane" layoutX="640.0" prefHeight="800.0" prefWidth="640.0">
+        <content>
+          <AnchorPane fx:id="menuViewPane" minHeight="0.0" minWidth="0.0" prefHeight="807.0" prefWidth="628.0">
+               <children>
+                  <TableView fx:id="menuTable" layoutX="-1.0" layoutY="-1.0" prefHeight="399.0" prefWidth="523.0">
+                    <columns>
+                      <TableColumn fx:id="itemNameCol" prefWidth="88.0" resizable="false" text="Item Name" />
+                      <TableColumn fx:id="descCol" minWidth="0.0" prefWidth="358.0" resizable="false" text="Description" />
+                        <TableColumn fx:id="priceCol" prefWidth="76.0" resizable="false" text="Price (£)" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

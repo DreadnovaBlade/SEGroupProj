@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="restaurantapp.FXMLDocumentController">
+   <children>
+      <TextField fx:id="username" layoutX="508.0" layoutY="304.0" prefHeight="44.0" prefWidth="264.0" promptText="Username">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="button" layoutX="555.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="170.0" text="Log In">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="password" layoutX="508.0" layoutY="384.0" prefHeight="44.0" prefWidth="264.0" promptText="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <Separator layoutX="486.0" layoutY="206.0" prefHeight="5.0" prefWidth="328.0" />
+      <Separator layoutX="486.0" layoutY="562.0" prefHeight="5.0" prefWidth="328.0" />
+   </children>
+</AnchorPane>

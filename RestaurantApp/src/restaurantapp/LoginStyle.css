@@ -1,0 +1,17 @@
+.background{
+     -fx-background-image: url("ImageAssets/registerBackground.jpg");
+     -fx-background-size: 120%;
+     -fx-background-repeat: no-repeat;
+ }
+
+.error{
+    -fx-fill: #6e7887;
+}
+
+.form{
+    -fx-padding: 20%;
+    -fx-fill: #ffffff;
+    -fx-opacity: 0.75;
+    -fx-arc-height: 25px;
+    -fx-arc-width: 25px;
+}
