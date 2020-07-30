@@ -1,6 +1,4 @@
-# SEGroupProj
-Repo for the Restaurant App made by Group 50 of the SE Group Project module
-
+# Software Engineering Group Project by Group 50
 This was a Software Engineering project made by a team of 5 people. The goal was to make a Point of Service application for a restaurant so waiters can use tablets to take orders
 and submit them to the kitchen without using paper and pencil. This was coded using Java and FXML.
 
